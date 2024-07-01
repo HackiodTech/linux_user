@@ -1,11 +1,11 @@
-##Automating User Creation and Management with a Bash Script
-#Introduction
+## Automating User Creation and Management with a Bash Script
+# Introduction
 Hello, my name is Sunday Goodnews, a budding SysOps engineer from Nigeria with HNG Internship, and I'm excited to be part of the HNG Internship program. The journey into tech has been both challenging and rewarding, and I believe that sharing knowledge is a crucial part of growth in this field. Today, I’m going to walk you through a script I created to automate user creation and management on a Linux system. This script is particularly useful for system administrators who need to manage multiple users efficiently.
 
-#The Problem
+# The Problem
 Managing users on a Linux system can be a tedious task, especially when you have to create multiple users, assign them to groups, set up home directories, and generate passwords. Doing this manually is not only time-consuming but also prone to errors. To solve this, I developed a bash script called create_users.sh that automates these tasks.
 
-#The Script
+# The Script
 Here's a step-by-step explanation of the script:
 
 Initial Setup
