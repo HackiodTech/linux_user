@@ -32,11 +32,17 @@ while IFS=';' read -r username groups; do
     username=$(echo "$username" | xargs)
     groups=$(echo "$groups" | xargs)
 
+    # Create personal group for the user if it doesn't exist
+    if ! getent group "$username" &>/dev/null; then
+        groupadd "$username"
+        echo "Personal group $username created" | tee -a $LOGFILE
+    fi
+
     # Create the user if it doesn't exist
     if id "$username" &>/dev/null; then
         echo "User $username already exists" | tee -a $LOGFILE
     else
-        useradd -m "$username" -G "$username" 2>>$LOGFILE
+        useradd -m -g "$username" -G "$username" "$username" 2>>$LOGFILE
         echo "User $username created" | tee -a $LOGFILE
     fi
 
